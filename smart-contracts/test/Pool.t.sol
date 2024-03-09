@@ -27,6 +27,8 @@ function testSupply() public {
     uint256 supplyAmount = 1e18; // 1 token
     pool.supply(address(token), supplyAmount);
 
+    assertEq(pool.getSupplyedAmount(user, address(token)), supplyAmount);
+
 
     vm.stopPrank();
 }
