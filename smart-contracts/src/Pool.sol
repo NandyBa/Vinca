@@ -28,6 +28,13 @@ contract Pool {
         suppliedAmounts[msg.sender][asset] += amount;
     }
 
+    // Function for a user to withdraw an asset from the pool.
+    function withdraw(address asset, uint256 amount) external {
+        require(suppliedAmounts[msg.sender][asset] >= amount, "Insufficient balance");
+        IERC20(asset).transfer(msg.sender, amount);
+        suppliedAmounts[msg.sender][asset] -= amount;
+    }
+
     // Function for a user to borrow an asset from the pool.
     function borrow(address asset, uint256 amount) external {}
 }
