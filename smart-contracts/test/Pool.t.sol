@@ -49,4 +49,17 @@ contract SimplePoolTest is Test {
         assertEq(pool.getSupplyedAmount(user, address(token2)), amount2);
     }
 
+    function testWithdraw() public {
+        vm.startPrank(user);
+        uint256 withdrawAmount = 1e18; // 1 token
+        uint256 supplyAmount = 1e18; // 1 token
+        pool.supply(address(token), supplyAmount);
+        pool.withdraw(address(token), withdrawAmount);
+        vm.stopPrank();
+
+        assertEq(pool.getSupplyedAmount(user, address(token)), 0);
+        assertEq(token.balanceOf(address(pool)), 0);
+        assertEq(token.balanceOf(user), 1e18);
+    }
+
 }
