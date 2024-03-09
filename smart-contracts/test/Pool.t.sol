@@ -33,4 +33,20 @@ contract SimplePoolTest is Test {
         vm.stopPrank();
     }
 
+    function testSupply2differentTokens() public {
+        uint256 amount2 = 3e18;
+        TestToken token2 = new TestToken(amount2); // Supply 3 token to the deployer for testing
+        
+        token2.transfer(user, amount2); // Transfer some tokens to the user
+
+        vm.startPrank(user);
+        token2.approve(address(pool), amount2);
+        pool.supply(address(token), 1e18);
+        pool.supply(address(token2), amount2);
+        vm.stopPrank();
+
+        assertEq(pool.getSupplyedAmount(user, address(token)), 1e18);
+        assertEq(pool.getSupplyedAmount(user, address(token2)), amount2);
+    }
+
 }
