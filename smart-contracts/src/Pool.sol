@@ -5,6 +5,8 @@ import {IERC20} from "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.so
 
 contract Pool {
 
+    mapping(address => mapping(address => uint256)) public suppliedAmounts;
+
     
     // Function to get the Total Value Locked (TVL) of an asset in the pool.
     function getAssetTVL(address asset) external view returns (uint256) {}
@@ -16,11 +18,14 @@ contract Pool {
     function getBorrowedAmount(address user, address asset) external view returns (uint256) {}
 
     // Function to get the total amount supplied by a user for a specific asset.
-    function getSupplyedAmount(address user, address asset) external view returns (uint256) {}
+    function getSupplyedAmount(address user, address asset) external view returns (uint256) {
+        return suppliedAmounts[user][asset];
+    }
 
     // Function for a user to supply an asset to the pool.
     function supply(address asset, uint256 amount) external {
         IERC20(asset).transferFrom(msg.sender, address(this), amount);
+        suppliedAmounts[msg.sender][asset] += amount;
     }
 
     // Function for a user to borrow an asset from the pool.
