@@ -22,7 +22,7 @@ contract PoolTest is Test {
         usdcReserve = new USDCReserve(address(usdc));
 
         wBTC.transfer(address(1), 1e18);
-        // usdc.transfer(address(2), 1e24);
+        usdc.transfer(address(2), 1e24);
 
         vm.startPrank(deployer);
         
@@ -61,16 +61,16 @@ contract PoolTest is Test {
         
 
         
-        vm.startPrank(address(1));
+        vm.startPrank(address(2));
         
         ERC20(usdc).approve(address(usdcReserve), supplyAmount);
-        console.log(usdc.allowance(address(1), address(usdcReserve)));
+        console.log(usdc.allowance(address(2), address(usdcReserve)));
         usdcReserve.supply(supplyAmount);
         
         vm.stopPrank();
         
 
-        assertEq(usdcReserve.getSupplyedAmount(address(1)), supplyAmount);
+        assertEq(usdcReserve.getSupplyedAmount(address(2)), supplyAmount);
     }
 
     function testWithdraw() public {
