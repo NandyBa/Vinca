@@ -11,7 +11,7 @@ To be respond to the requirements our protocol use FTSO **(Flare Time Series Ora
 
 They allow us to dynamically manage risk and maintain the stability of our platform by adjusting to real-time market conditions.
 
-Without reliable price feeds, we couldn't protect our users or our platform's integrity against the volatility inherent in crypto markets.
+Without **reliable price feeds**, we couldn't protect our users or our platform's integrity against the volatility inherent in crypto markets.
 
 
 
@@ -27,8 +27,8 @@ Live website: https://vinca-pearl.vercel.app/
 
 
 **Roadmap**
-- Use Flare's State Connector to manage dynamicly the LTV. That's a key feature to keep user position save. And it's currently not done by any lending and borrowing protocol. Only Aave to regular change but the are not automatic yet.
-Having a protocol who react quily to event like a not regular ERC20 transfert or a de-peg will reduce risk for our users.
+- Use **Flare's State Connector** to manage dynamicly the LTV. That's a key feature to keep user position save. And it's currently not done by any lending and borrowing protocol. Only Aave to regular change but the are not automatic yet.
+Having a **protocol who react quickly** to events like a not regular ERC20 transfert or a de-peg will reduce risk for our users.
 
 
 
