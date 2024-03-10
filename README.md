@@ -1,6 +1,9 @@
 ## Vinca
 Vinca is a multi-chain lending and borrowing protocol power by Flare. It's reduce fiction between chain by allowing user to use multiple chain effortless. You can use you asset on one chain let's say Ethereum to borrow on others like Polygon. So your assets stay safe on L1 and you get all advantage of L2 without need of bridging.
 
+<img width="1125" alt="Screenshot 2024-03-10 at 19 15 09" src="https://github.com/NandyBa/Vinca/assets/11545946/68e57f36-1f23-4273-aa1a-f9d930fec829">
+
+
 ## How to we use Flare ?
 
 Price feeds are essential to us because they ensure the accurate valuation of collateral, enabling secure and fair loan agreements.
@@ -9,6 +12,8 @@ To be respond to the requirements our protocol use FTSO **(Flare Time Series Ora
 They allow us to dynamically manage risk and maintain the stability of our platform by adjusting to real-time market conditions.
 
 Without reliable price feeds, we couldn't protect our users or our platform's integrity against the volatility inherent in crypto markets.
+
+
 
 ## Deployed contracts:
 ### Pool contract
