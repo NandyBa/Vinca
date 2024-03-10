@@ -35,7 +35,7 @@ contract PoolTest is Test {
         vm.stopPrank();
     }
 
-    function testSupply() public {
+    function testSupplywBTC() public {
         uint256 supplyAmount = 1e18;
 
         console.log(wBTC.balanceOf(address(1)));
@@ -52,6 +52,25 @@ contract PoolTest is Test {
         
 
         assertEq(wBTCReserve.getSupplyedAmount(address(1)), supplyAmount);
+    }
+
+    function testSupplyUSDC() public {
+        uint256 supplyAmount = 1e18;
+
+        console.log(usdc.balanceOf(address(1)));
+        
+
+        
+        vm.startPrank(address(1));
+        
+        ERC20(usdc).approve(address(usdcReserve), supplyAmount);
+        console.log(usdc.allowance(address(1), address(usdcReserve)));
+        usdcReserve.supply(supplyAmount);
+        
+        vm.stopPrank();
+        
+
+        assertEq(usdcReserve.getSupplyedAmount(address(1)), supplyAmount);
     }
 
     function testWithdraw() public {
