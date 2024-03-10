@@ -18,10 +18,13 @@ Without **reliable price feeds**, we couldn't protect our users or our platform'
 ## Deployed contracts:
 ### Pool contract
 - 0x29252fDfC494A8A930b5258D9Fc0947326E8bcc1
+- [code](https://github.com/NandyBa/Vinca/blob/master/smart-contracts/src/SimpleFtsoExample.sol)
 ### wBTC Reserve
 - 0xB23e6ACB45902dc288D47D3542ab303521f0E178
+- [code](https://github.com/NandyBa/Vinca/blob/master/smart-contracts/src/USDCReserve.sol)
 ### usdc Reserve
 - 0xE169875161Fc0b06D8eEf3B9388b75C2D8dc8828
+- [code](https://github.com/NandyBa/Vinca/blob/master/smart-contracts/src/WBTCReserve.sol)
 
 Live website: https://vinca-pearl.vercel.app/
 
