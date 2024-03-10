@@ -26,7 +26,10 @@ Without **reliable price feeds**, we couldn't protect our users or our platform'
 - 0xE169875161Fc0b06D8eEf3B9388b75C2D8dc8828
 - [smart-contract code](https://github.com/NandyBa/Vinca/blob/master/smart-contracts/src/WBTCReserve.sol)
 
-Live website: https://vinca-pearl.vercel.app/
+
+https://coston-explorer.flare.network/address/0x22fd81bbe0F1B7E701f4d936eD415966B6E8c336
+
+Live website: https://vinca-pearl.vercel.app/ et 
 
 
 **Roadmap**
