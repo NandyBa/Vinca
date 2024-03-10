@@ -27,4 +27,8 @@ contract WBTCReserve {
         IERC20(address(wbtc)).transfer(msg.sender, amount);
         balances[msg.sender] -= amount;
     }
+
+    function getAssetPrice() external view returns (uint256) {
+        return 70000;
+    }
 }

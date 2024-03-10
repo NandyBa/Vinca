@@ -88,6 +88,11 @@ contract PoolTest is Test {
         assertEq(wBTC.balanceOf(address(1)), withdrawAmount);
     }
 
+    function testgetAssetPrice() public {
+        assertEq(wBTCReserve.getAssetPrice(), 70000);
+        assertEq(usdcReserve.getAssetPrice(), 1);
+    }
+
     
 
 }

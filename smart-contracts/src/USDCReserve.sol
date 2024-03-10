@@ -27,4 +27,8 @@ contract USDCReserve {
         IERC20(address(usdc)).transfer(msg.sender, amount);
         balances[msg.sender] -= amount;
     }
+
+    function getAssetPrice() external view returns (uint256) {
+        return 1;
+    }
 }
