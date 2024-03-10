@@ -5,7 +5,7 @@ import {IERC20} from "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.so
 import {IFtsoRegistry} from "lib/flare-foundry-periphery-package/src/coston2/ftso/userInterfaces/IFtsoRegistry.sol";
 
 import {FlareContractsRegistryLibrary} from "lib/flare-foundry-periphery-package/src/coston2/util-contracts/ContractRegistryLibrary.sol";
-import "./SimplePool.sol";
+import {SimplePool} from "./SimplePool.sol";
 
 contract WBTCReserve {
 
@@ -51,5 +51,10 @@ contract WBTCReserve {
 
     function registerPool(address _pool) external {
         pool = SimplePool(_pool);
+    }
+
+    function executeTransfert(address _user, uint256 _amount) external {
+        require(msg.sender == address(pool), "Only pool can execute borrow");
+        IERC20(address(wbtc)).transfer(_user, _amount);
     }
 }
