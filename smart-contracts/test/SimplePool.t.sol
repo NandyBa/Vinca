@@ -93,6 +93,12 @@ contract PoolTest is Test {
         assertEq(usdcReserve.getAssetPrice(), 1);
     }
 
+    function testgetAssetsPrice() public {
+        uint256[] memory prices = pool.getAssetsPrice();
+        assertEq(prices[0], 70000);
+        assertEq(prices[1], 1);
+    }
+
     
 
 }

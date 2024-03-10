@@ -24,6 +24,15 @@ contract SimplePool {
         }
     }
 
+    function getAssetsPrice() external view returns (uint256[] memory) {
+        uint256 wBTCPrice = wBTCReserve.getAssetPrice();
+        uint256 usdcPrice = usdcReserve.getAssetPrice();
+        uint256[] memory prices = new uint256[](2);
+        prices[0] = wBTCPrice;
+        prices[1] = usdcPrice;
+        return prices;
+    }
+
 
     
 
