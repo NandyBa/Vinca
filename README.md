@@ -18,6 +18,8 @@ Without reliable price feeds, we couldn't protect our users or our platform's in
 ### usdc Reserve
 - 0xE169875161Fc0b06D8eEf3B9388b75C2D8dc8828
 
+Live website: https://vinca-pearl.vercel.app/
+
 
 **Roadmap**
 - Use Flare's State Connector to manage dynamicly the LTV
