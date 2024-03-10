@@ -21,4 +21,10 @@ contract WBTCReserve {
     function getSupplyedAmount(address user) external view returns (uint256) {
         return balances[user];
     }
+
+    function withdraw(uint256 amount) external {
+        require(balances[msg.sender] >= amount, "Insufficient balance");
+        IERC20(address(wbtc)).transfer(msg.sender, amount);
+        balances[msg.sender] -= amount;
+    }
 }

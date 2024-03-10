@@ -54,6 +54,21 @@ contract PoolTest is Test {
         assertEq(wBTCReserve.getSupplyedAmount(address(1)), supplyAmount);
     }
 
+    function testWithdraw() public {
+        uint256 withdrawAmount = 1e18;
+        uint256 supplyAmount = 1e18;
+
+        vm.startPrank(address(1));
+        ERC20(wBTC).approve(address(wBTCReserve), supplyAmount);
+        wBTCReserve.supply(supplyAmount);
+        wBTCReserve.withdraw(withdrawAmount);
+        vm.stopPrank();
+
+        assertEq(wBTCReserve.getSupplyedAmount(address(1)), 0);
+        assertEq(wBTC.balanceOf(address(wBTCReserve)), 0);
+        assertEq(wBTC.balanceOf(address(1)), withdrawAmount);
+    }
+
     
 
 }
