@@ -14,7 +14,7 @@ contract WBTCReserve {
 
     function supply(uint256 amount) external {
         IERC20(address(wbtc)).transferFrom(msg.sender, address(this), amount);
-        // balances[msg.sender] += amount;
+        balances[msg.sender] += amount;
     }
     
 

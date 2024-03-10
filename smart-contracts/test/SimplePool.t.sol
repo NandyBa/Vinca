@@ -51,7 +51,7 @@ contract PoolTest is Test {
         vm.stopPrank();
         
 
-        // assertEq(wBTCReserve.getSupplyedAmount(address(1)), supplyAmount);
+        assertEq(wBTCReserve.getSupplyedAmount(address(1)), supplyAmount);
     }
 
     
