@@ -10,3 +10,7 @@ They allow us to dynamically manage risk and maintain the stability of our platf
 
 Without reliable price feeds, we couldn't protect our users or our platform's integrity against the volatility inherent in crypto markets.
 
+
+**Roadmap**
+- Use Flare's State Connector to manage dynamicly the LTV
+
