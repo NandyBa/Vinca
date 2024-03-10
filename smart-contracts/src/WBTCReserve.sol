@@ -5,11 +5,14 @@ import {IERC20} from "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.so
 import {IFtsoRegistry} from "lib/flare-foundry-periphery-package/src/coston2/ftso/userInterfaces/IFtsoRegistry.sol";
 
 import {FlareContractsRegistryLibrary} from "lib/flare-foundry-periphery-package/src/coston2/util-contracts/ContractRegistryLibrary.sol";
+import "./SimplePool.sol";
+
 contract WBTCReserve {
 
     IERC20 wbtc;
     mapping(address => uint256) public balances;
     IFtsoRegistry ftsoRegistry;
+    SimplePool pool;
     
     constructor(address _wBTC) {
         wbtc = IERC20(_wBTC);
@@ -44,5 +47,9 @@ contract WBTCReserve {
 
     function registerOracle(address _ftsoRegistry) external {
         ftsoRegistry = IFtsoRegistry(_ftsoRegistry);
+    }
+
+    function registerPool(address _pool) external {
+        pool = SimplePool(_pool);
     }
 }
