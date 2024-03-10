@@ -27,7 +27,8 @@ Live website: https://vinca-pearl.vercel.app/
 
 
 **Roadmap**
-- Use Flare's State Connector to manage dynamicly the LTV
+- Use Flare's State Connector to manage dynamicly the LTV. That's a key feature to keep user position save. And it's currently not done by any lending and borrowing protocol. Only Aave to regular change but the are not automatic yet.
+Having a protocol who react quily to event like a not regular ERC20 transfert or a de-peg will reduce risk for our users.
 
 
 
